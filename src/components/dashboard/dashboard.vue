@@ -2,15 +2,32 @@
   <div id="dashboard">
     <h1>That's the dashboard!</h1>
     <p>You should only get here if you're authenticated!</p>
+    <p>Your email address: {{ email }} </p>
   </div>
 </template>
 
 <script>
 import axios from 'axios'
 export default {
+  data() {
+    return {
+      email: ''
+    }
+  },
   created() {
-    axios.get('')
-      .then(res => console.log(res))
+    axios.get('https://auth-vue-b0059.firebaseio.com/users.json')
+      .then(res => {
+        console.log(res)
+        const data = res.data
+        const users = []
+        for (let key in data) {
+          const user = data[key]
+          user.id = key
+          users.push(user) 
+        }
+        console.log(users)
+        this.email = users[0].email
+      })
   } 
 }
 </script>
