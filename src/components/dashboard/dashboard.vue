@@ -15,7 +15,7 @@ export default {
     }
   },
   created() {
-    axios.get('https://auth-vue-b0059.firebaseio.com/users.json')
+    axios.get('/users.json')
       .then(res => {
         console.log(res)
         const data = res.data
@@ -42,3 +42,5 @@ export default {
     color: red;
   }
 </style>
+
+
