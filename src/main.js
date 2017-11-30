@@ -6,8 +6,8 @@ import router from './router'
 import store from './store'
 
 axios.defaults.baseURL = 'https://auth-vue-b0059.firebaseio.com'
-axios.defaults.headers.common['Authorization'] = 'token'
-axios.defaults.headers.get['Accepts'] = 'application/json'
+// axios.defaults.headers.common['Authorization'] = 'token'
+// axios.defaults.headers.get['Accepts'] = 'application/json'
 
 
 
